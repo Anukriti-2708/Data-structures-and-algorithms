@@ -1,0 +1,22 @@
+class GfG {
+    // Function to reverse first k elements of a queue.
+    public Queue<Integer> modifyQueue(Queue<Integer> q, int k) {
+        Stack<Integer> st = new Stack<>();
+    int p=q.size()-k;
+    while(k!=0){
+        st.push(q.peek());
+        q.remove();
+        k--;
+    }
+    while(!st.empty()){
+        q.add(st.peek());
+        st.pop();
+    }
+    while(p!=0){
+        q.add(q.peek());
+        q.remove();
+        p--;
+    }
+    return q;
+}
+    }
