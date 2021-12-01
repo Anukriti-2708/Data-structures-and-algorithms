@@ -1,0 +1,7 @@
+ public static int max(Node node) {
+    int m=0;
+    for(Node child:node.children){
+        m = Math.max(m,max(child));
+    }
+    return Math.max(m,node.data);
+  }
